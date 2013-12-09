@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "Scene.h"
+#include "Models.h"
 
 void Keyboard(unsigned char key, int x, int y)
 {

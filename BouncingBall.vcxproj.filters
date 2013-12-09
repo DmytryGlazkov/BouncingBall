@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы исходного кода\Models">
-      <UniqueIdentifier>{27e8f8bc-e502-43ce-8706-9ef4d493ee80}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,16 +32,10 @@
     <ClInclude Include="Timer.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>Файлы исходного кода\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Platform.h">
-      <Filter>Файлы исходного кода\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Файлы исходного кода\Models</Filter>
-    </ClInclude>
     <ClInclude Include="Helpers.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Models.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

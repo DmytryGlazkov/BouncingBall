@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Scene.h"
-#include "Platform.h"
+#include "Models.h"
 
 void Display()
 {

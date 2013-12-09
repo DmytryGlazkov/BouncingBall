@@ -1,6 +1,7 @@
 #include "libs/OpenGL/glut.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "Display.h"
 #include "Reshape.h"
@@ -10,6 +11,7 @@
 
 int main(int argc, char** argv)
 {
+	srand(time(0));
 	glutInit (&argc, argv);
 	glutInitWindowSize (ScreenWidth, ScreenHeight);
 	glutInitDisplayMode (GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);

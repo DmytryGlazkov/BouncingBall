@@ -69,10 +69,8 @@
     <ClInclude Include="Display.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Platform.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Models.h" />
     <ClInclude Include="Reshape.h" />
-    <ClInclude Include="Scene.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
