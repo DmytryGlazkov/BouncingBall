@@ -23,9 +23,9 @@ public:
 		dx = 0;
 		dy = 0;
 
-		PlayerRadius = (ScreenHeight > ScreenWidth ? ScreenWidth : ScreenHeight) / 12;
+		PlayerRadius = (ScreenHeight > ScreenWidth ? ScreenWidth : ScreenHeight) / 15;
 		X = ScreenWidth / 2 - PlayerRadius / 2;
-		Y = ScreenHeight - PlayerRadius;
+		Y = PlayerRadius;
 	}
 
 	void Update(){    
@@ -83,7 +83,8 @@ public:
 
 	void Draw()
 	{
-		player->Draw();
+		if (Life)
+			player->Draw();
 	}
 
 	Player* GetPlayer()
@@ -101,21 +102,21 @@ public:
 
 	Platforms()
 	{
-		X = rand()%(ScreenWidth - 100) + 50;
+		X = rand()%(ScreenWidth - PlatformWidth) + PlatformWidth / 2;
 		Y = rand()%ScreenHeight;
 		Width = PlatformWidth;
 	}
 
 	void New()
 	{
-		X = rand()%(ScreenWidth - 100) + 50;
+		X = rand()%(ScreenWidth - PlatformWidth) + PlatformWidth / 2;
 		Y = ScreenHeight;
 		Width = PlatformWidth;
 	}
 
 	void Update()
 	{
-		if(Scene::GetInstance().GetPlayer()->Y >= 500){
+		if(Scene::GetInstance().GetPlayer()->Y >= ScreenHeight){
 			Y -= int(Scene::GetInstance().GetPlayer()->dy);
 		}
 	}
@@ -124,12 +125,10 @@ public:
 		glPushMatrix();
 
 		glColor3f(0, 0, 0);
-		glTranslatef(X, Y, 0);
+		glTranslatef(this->X, this->Y, 0);
 
-		glBegin(GL_LINES);
 			glVertex2f(X, Y);
 			glVertex2f(X + PlatformWidth, Y);
-		glEnd();
 
 		glPopMatrix();
 	}

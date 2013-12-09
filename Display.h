@@ -10,8 +10,12 @@ void Display()
 	glLoadIdentity();
 
 	Scene::GetInstance().Draw();
-	for(int i = 0;i < PlatformsCount; i++)
+	glLineWidth(5);
+	glBegin(GL_LINES);
+	for(int i = 0; i < PlatformsCount; i++)
 		Platform[i].Draw();
+	glEnd();
+	glLineWidth(1);
 
 
 	glutSwapBuffers();
