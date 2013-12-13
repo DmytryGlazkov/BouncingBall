@@ -71,6 +71,7 @@
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Models.h" />
     <ClInclude Include="Reshape.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

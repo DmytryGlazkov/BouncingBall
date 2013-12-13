@@ -27,10 +27,10 @@ int main(int argc, char** argv)
 	glutSpecialUpFunc(KeyboardSpecialKeysUp);
 	glutTimerFunc(1000 / 24, Timer, 0);
 
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_TEXTURE_2D);
+	PlatformsTexture = LoadGLTextures("Textures/platform.jpg");
+
+	Scene::GetInstance().LoadGLTextures();
 
 	glutMainLoop();
 	return 0;
