@@ -161,6 +161,11 @@ public:
 		glPopMatrix();
 		if (Life)
 			player->Draw();
+
+		char buf[15] = "Score: ";
+		itoa(Score / 10, buf + 7, 10);
+
+		TextOut(0, ScreenHeight - 50, buf);
 	}
 
 	Player* GetPlayer()
@@ -193,8 +198,9 @@ public:
 
 	void Update()
 	{
-		if(Scene::GetInstance().GetPlayer()->Y >= ScreenHeight){
+		if(Scene::GetInstance().GetPlayer()->Y >= ScreenHeight / 2 && int(Scene::GetInstance().GetPlayer()->dy) > 0){
 			Y -= int(Scene::GetInstance().GetPlayer()->dy);
+			Score  += int(Scene::GetInstance().GetPlayer()->dy);
 		}
 	}
 
