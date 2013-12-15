@@ -30,6 +30,10 @@ int main(int argc, char** argv)
 	glEnable(GL_TEXTURE_2D);
 	PlatformsTexture = LoadGLTextures("Textures/platform.jpg");
 
+	StartTexture = LoadGLTextures("Textures/StartGame.tga");
+	ExitTexture = LoadGLTextures("Textures/ExitGame.tga");
+	GameOverTexture = LoadGLTextures("Textures/GameOver.jpg");
+
 	Scene::GetInstance().LoadGLTextures();
 
 	glutMainLoop();

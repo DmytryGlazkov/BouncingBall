@@ -141,13 +141,8 @@ public:
 		player->Update();
 	}
 
-	void Draw()
+	void DrawBackground()
 	{
-		glPushMatrix();
-		glLoadIdentity();
-
-		glColor3f(1, 1, 1);
-
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, texture);
 		glBegin(GL_QUADS);
@@ -157,6 +152,16 @@ public:
 			glTexCoord2d(0, 1); glVertex2f(0, ScreenHeight);
 		glEnd();
 		glDisable(GL_TEXTURE_2D);
+	}
+
+	void Draw()
+	{
+		glPushMatrix();
+		glLoadIdentity();
+
+		glColor3f(1, 1, 1);
+
+		DrawBackground();
 
 		glPopMatrix();
 		if (Life)
@@ -198,7 +203,9 @@ public:
 
 	void Update()
 	{
-		if(Scene::GetInstance().GetPlayer()->Y >= ScreenHeight / 2 && int(Scene::GetInstance().GetPlayer()->dy) > 0){
+		if(Scene::GetInstance().GetPlayer()->Y >= ScreenHeight / 3 * 2
+			 && int(Scene::GetInstance().GetPlayer()->dy) > 0)
+		{
 			Y -= int(Scene::GetInstance().GetPlayer()->dy);
 			Score  += int(Scene::GetInstance().GetPlayer()->dy);
 		}
