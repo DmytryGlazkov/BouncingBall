@@ -1,6 +1,8 @@
 #pragma once
 #include "libs/SOIL/SOIL.h"
 
+int LoadGLTextures(char* filename);
+
 static int ScreenWidth	= 400;
 static int ScreenHeight = 600;
 
@@ -14,6 +16,20 @@ static unsigned PlatformsTexture = 0;
 
 static int Score = 0;
 static bool Life = true;
+static bool StartScreen = true;
+
+static GLuint StartTexture = 0;
+static GLuint ExitTexture = 0;
+static GLuint GameOverTexture = 0;
+
+static int StartButtonLeft = ScreenWidth / 6;
+static int StartButtonTop = StartButtonLeft + ScreenWidth / 3;
+
+static int ExitButtonLeft = ScreenWidth - StartButtonLeft - ScreenWidth / 3;
+static int ExitButtonTop = StartButtonTop;
+
+static int ButtonHeight = ScreenWidth / 3;
+static int ButtonWidth = ScreenWidth / 3;
 
 int LoadGLTextures(char* filename)									
 {
