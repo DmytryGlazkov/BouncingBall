@@ -9,8 +9,15 @@ void MouseFunc(int button, int state, int x, int y)
 		if (x > StartButtonLeft && x < StartButtonLeft + ButtonWidth &&
 			y - StartButtonTop > 10 && y < StartButtonTop + ButtonHeight)
 		{
-			StartScreen = false;
-			Life = true;
+			if (StartScreen)
+			{
+				StartScreen = false;
+				Life = true;
+			}
+			else
+			{
+				exit(0);
+			}
 		}
 		cout << StartButtonLeft << " " << StartButtonTop << endl;
 		if (x > ExitButtonLeft && x < ExitButtonLeft + ButtonWidth &&
