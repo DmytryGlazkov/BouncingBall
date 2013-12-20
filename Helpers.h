@@ -26,6 +26,7 @@ static GLuint StartTexture = 0;
 static GLuint ExitTexture = 0;
 static GLuint GameOverTexture = 0;
 static GLuint BonusTexture = 0;
+static GLuint LogoTexture = 0;
 
 static int StartButtonLeft = ScreenWidth / 6;
 static int StartButtonTop = StartButtonLeft + ScreenWidth / 3;

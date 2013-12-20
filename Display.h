@@ -22,6 +22,15 @@ void Display()
 		glEnable(GL_TEXTURE_2D);		
 		glAlphaFunc(GL_GREATER, 0);
 		glEnable(GL_ALPHA_TEST);
+
+		glBindTexture(GL_TEXTURE_2D, LogoTexture);
+		glBegin(GL_QUADS);
+		glTexCoord2d(0, 0); glVertex2f(0, ScreenHeight - 130);
+		glTexCoord2d(1, 0); glVertex2f(ScreenWidth, ScreenHeight - 130);
+		glTexCoord2d(1, 1); glVertex2f(ScreenWidth, ScreenHeight);
+		glTexCoord2d(0, 1); glVertex2f(0, ScreenHeight);
+		glEnd();
+
 		glBindTexture(GL_TEXTURE_2D, StartTexture);
 		glBegin(GL_QUADS);
 			glTexCoord2d(0, 0); glVertex2f(startLeft, startTop);
