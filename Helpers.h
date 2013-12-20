@@ -3,6 +3,8 @@
 
 int LoadGLTextures(char* filename);
 
+static int Window = 0;
+
 static int ScreenWidth	= 400;
 static int ScreenHeight = 600;
 
@@ -17,6 +19,7 @@ static unsigned PlatformsTexture = 0;
 static int Score = 0;
 static bool Life = true;
 static bool StartScreen = true;
+static bool Exit = false;
 
 static GLuint StartTexture = 0;
 static GLuint ExitTexture = 0;

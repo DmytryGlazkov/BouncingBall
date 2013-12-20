@@ -10,7 +10,7 @@ void Display()
 	glLoadIdentity();
 
 
-	/*if (StartScreen)
+	if (StartScreen)
 	{
 		Scene::GetInstance().DrawBackground();
 
@@ -41,7 +41,7 @@ void Display()
 		glDisable(GL_ALPHA_TEST);
 		glDisable(GL_TEXTURE_2D);
 	}
-	else*/
+	else
 	{
 		Scene::GetInstance().Draw();
 

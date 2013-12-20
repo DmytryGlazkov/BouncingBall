@@ -8,6 +8,7 @@
 #include "Keyboard.h"
 #include "Timer.h"
 #include "Helpers.h"
+#include "Mouse.h"
 
 int main(int argc, char** argv)
 {
@@ -17,7 +18,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode (GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH)-ScreenWidth)/2,
 		(glutGet(GLUT_SCREEN_HEIGHT)-ScreenHeight)/2);
-	glutCreateWindow ("Bouncing Ball");
+	Window = glutCreateWindow ("Bouncing Ball");
 
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Reshape);
@@ -25,6 +26,7 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(Keyboard);
 	glutSpecialFunc(KeyboardSpecialKeys);
 	glutSpecialUpFunc(KeyboardSpecialKeysUp);
+	glutMouseFunc(MouseFunc);
 	glutTimerFunc(1000 / 24, Timer, 0);
 
 	glEnable(GL_TEXTURE_2D);
