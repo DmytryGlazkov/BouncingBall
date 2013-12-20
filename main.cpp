@@ -34,7 +34,8 @@ int main(int argc, char** argv)
 
 	StartTexture = LoadGLTextures("Textures/StartGame.tga");
 	ExitTexture = LoadGLTextures("Textures/ExitGame.tga");
-	GameOverTexture = LoadGLTextures("Textures/GameOver.jpg");
+	GameOverTexture = LoadGLTextures("Textures/game_over.tga");
+	BonusTexture = LoadGLTextures("Textures/bonus.tga");
 
 	Scene::GetInstance().LoadGLTextures();
 

@@ -15,7 +15,13 @@ void Timer(int id)
 		Platform[i].Update();    
 
 		if(Platform[i].Y < -50)
+		{
+			if (Platform[i].bonus)
+			{
+				HasBonus = false;
+			}
 			Platform[i].New();
+		}
 	}
 
 	for(int i = 0; i < PlatformsCount; i++)
@@ -24,7 +30,14 @@ void Timer(int id)
 			(person->Y + person->PlayerRadius >= Platform[i].Y) &&
 			(person->Y <= Platform[i].Y + person->PlayerRadius + 20) &&
 			person->dy <  0)
+		{
+			if (Platform[i].bonus)
+			{
+				person->dy = Bounce * 3;
+				break;
+			}
 			person->dy = Bounce;
+		}
 
 	if(person->Y >= ScreenHeight)
 		Score++; 

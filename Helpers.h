@@ -17,6 +17,7 @@ static int PlatformHeight = PlatformWidth / 5;
 static unsigned PlatformsTexture = 0;
 
 static int Score = 0;
+static bool HasBonus = false;
 static bool Life = true;
 static bool StartScreen = true;
 static bool Exit = false;
@@ -24,6 +25,7 @@ static bool Exit = false;
 static GLuint StartTexture = 0;
 static GLuint ExitTexture = 0;
 static GLuint GameOverTexture = 0;
+static GLuint BonusTexture = 0;
 
 static int StartButtonLeft = ScreenWidth / 6;
 static int StartButtonTop = StartButtonLeft + ScreenWidth / 3;

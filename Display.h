@@ -47,6 +47,22 @@ void Display()
 
 		for(int i = 0; i < PlatformsCount; i++)
 			Platform[i].Draw();
+		if (!Life)
+		{		
+			glEnable(GL_TEXTURE_2D);
+			glAlphaFunc(GL_GREATER, 0);
+			glEnable(GL_ALPHA_TEST);
+
+			glBindTexture(GL_TEXTURE_2D, GameOverTexture);
+			glBegin(GL_QUADS);
+			glTexCoord2d(0, 0); glVertex2f(0, StartButtonTop);
+			glTexCoord2d(1, 0); glVertex2f(ScreenWidth, StartButtonTop);
+			glTexCoord2d(1, 1); glVertex2f(ScreenWidth, StartButtonTop + ButtonHeight);
+			glTexCoord2d(0, 1); glVertex2f(0, StartButtonTop + ButtonHeight);
+			glEnd();
+			glDisable(GL_TEXTURE_2D);
+			glDisable(GL_ALPHA_TEST);
+		}
 	}
 
 

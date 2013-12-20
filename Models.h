@@ -186,12 +186,14 @@ class Platforms
 {
 public:
 	int X, Y, Width;
+	bool bonus;
 
 	Platforms()
 	{
 		X = rand()%(ScreenWidth - PlatformWidth) + PlatformWidth / 2;
 		Y = rand()%ScreenHeight;
 		Width = PlatformWidth;
+		bonus = false;
 	}
 
 	void New()
@@ -199,6 +201,15 @@ public:
 		X = rand()%(ScreenWidth - PlatformWidth) + PlatformWidth / 2;
 		Y = ScreenHeight;
 		Width = PlatformWidth;
+		bonus = false;
+		if (!HasBonus)
+		{
+			if (rand()%10 == 1)
+			{
+				bonus = true;
+				HasBonus = true;
+			}
+		}
 	}
 
 	void Update()
@@ -226,6 +237,21 @@ public:
 		glTexCoord2d(1, 1); glVertex2f(PlatformWidth, PlatformHeight);
 		glTexCoord2d(0, 1); glVertex2f(0, PlatformHeight);
 		glEnd();
+		
+		if (bonus)
+		{
+
+			glAlphaFunc(GL_GREATER, 0);
+			glEnable(GL_ALPHA_TEST);
+			glBindTexture(GL_TEXTURE_2D, BonusTexture);
+			glBegin(GL_QUADS);
+			glTexCoord2d(0, 0); glVertex2f(PlatformWidth / 3, PlatformHeight);
+			glTexCoord2d(1, 0); glVertex2f(PlatformWidth / 3 * 2, PlatformHeight);
+			glTexCoord2d(1, 1); glVertex2f(PlatformWidth / 3 * 2, PlatformHeight + PlatformWidth / 3);
+			glTexCoord2d(0, 1); glVertex2f(PlatformWidth / 3, PlatformHeight + PlatformWidth / 3);
+			glEnd();
+			glDisable(GL_ALPHA_TEST);
+		}
 		glDisable(GL_TEXTURE_2D);
 
 		glPopMatrix();
